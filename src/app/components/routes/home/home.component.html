@@ -1,0 +1,47 @@
+<div *ngIf="uid != null" class="py-5">
+    <div class="container">
+        <h2>Portada</h2>
+        <div class="input-container">
+            <label class="mx-3 mt-4" for="portada">Selecciona un archivo:</label>
+            <label class="custom-file-upload">
+                <input type="file" id="portada" accept="image/*" (change)="imageUploadP.uploadImages($event, 'portadas')" multiple>
+                Subir Archivo
+            </label>
+            <div class="images d-flex pt-5">
+                <div class="forimg" *ngFor="let image of imagesP">
+                    <img [src]="image" width="200">
+                    <button class="delete btn-with-icon" (click)="imageUploadP.deleteImage(image)">
+                        <span class="fa-solid fa-trash mx-1"></span>
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="uid != null" class="pt-5">
+    <div class="container">
+        <h2>Banner</h2>
+        <div class="input-container">
+            <label class="mx-3 mt-4" for="bann">Selecciona un archivo:</label>
+            <label class="custom-file-upload">
+                <input type="file" id="bann" accept="image/*" (change)="imageUploadB.uploadImages($event, 'bann')" multiple>
+                Subir Archivo
+            </label>
+            <div class="images d-flex pt-5">
+                <div class="forimg" *ngFor="let image of imagesB">
+                    <img [src]="image" width="200">
+                    <button class="delete btn-with-icon" (click)="imageUploadB.deleteImage(image)">
+                        <span class="fa-solid fa-trash mx-1"></span>
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-image-upload #imageUploadP [uid]="uid" (imagesUploaded)="getImagesP()"></app-image-upload>
+<app-image-upload #imageUploadB [uid]="uid" (imagesUploaded)="getImagesB()"></app-image-upload>

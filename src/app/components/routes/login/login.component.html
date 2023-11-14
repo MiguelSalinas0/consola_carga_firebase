@@ -1,0 +1,37 @@
+<div class="content pt-5">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h1>Iniciar Sesión</h1>
+                            <p class="mb-4">Sistema de gestión de imágenes </p>
+                        </div>
+                        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                            <div class="form-group first">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" formControlName="email" required>
+                            </div>
+                            <br>
+                            <div class="form-group last mb-4">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" formControlName="password" required>
+                            </div>
+                            <div>
+                                <input type="submit" value="Ingresar" class="btn btn-block btn-outline-primary">
+                            </div>
+                        </form>
+
+                        <span class="d-flex justify-content-start my-4">&mdash; o inicia sesión con &mdash;</span>
+
+                        <button class="google" (click)="onClick()"><img src="assets/login_google.png" alt="Google" width="150"/></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
